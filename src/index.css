@@ -23,3 +23,8 @@
     @apply transition-all duration-300;
   }
 }
+
+.iOS {
+  -webkit-appearance: none;
+  appearance: none;
+}

@@ -101,7 +101,7 @@ export default function App(): React.JSX.Element {
     <main className="px-normal flex flex-col gap-6 justify-center items-center min-h-screen">
       <Toaster />
       <h1>Todos App</h1>
-      <section className="bg-gray-300 rounded p-4 flex flex-col gap-4 w-full md:w-[80%] xl:w-[40%]">
+      <section className="bg-gray-300 rounded p-4 flex flex-col gap-4 w-full md:w-[80%] xl:w-[50%]">
         <div className="flex justify-between">
           {selectedTodo.length ? (
             <button
@@ -145,7 +145,7 @@ export default function App(): React.JSX.Element {
               onChange={handleChange}
               name="date"
               type="date"
-              className="col-span-1"
+              className="col-span-1 iOS"
             />
             <button type="submit" className="col-span-3 bg-blue-500 text-white">
               Add to Todo List
