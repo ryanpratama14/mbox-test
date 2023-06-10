@@ -9,24 +9,9 @@ export const validationFunction = (fields: any) => {
 };
 
 export const dateFormat = (date: string) => {
-  let months = [
-    "января",
-    "февраля",
-    "марта",
-    "апреля",
-    "мая",
-    "июня",
-    "июля",
-    "августа",
-    "сентября",
-    "октября",
-    "ноября",
-    "декабря",
-  ];
-  let d = new Date(date);
-  let ye = new Intl.DateTimeFormat("ru", { year: "numeric" }).format(d);
-  let mo = months[d.getMonth()];
-  let da = new Intl.DateTimeFormat("ru", { day: "2-digit" }).format(d);
-  let filteredDay = da?.startsWith("0") ? da?.replace("0", "") : da;
-  return `${filteredDay} ${mo} ${ye}`;
+  const d = new Date(date);
+  const ye = new Intl.DateTimeFormat("en-US", { year: "numeric" }).format(d);
+  const mo = new Intl.DateTimeFormat("en-US", { month: "long" }).format(d);
+  const da = new Intl.DateTimeFormat("en-US", { day: "2-digit" }).format(d);
+  return `${da} ${mo} ${ye}`;
 };
