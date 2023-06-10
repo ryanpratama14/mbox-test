@@ -161,6 +161,7 @@ export default function App(): React.JSX.Element {
               selectedTodo={selectedTodo}
               markTodo={markTodo}
               deleteTodo={deleteTodo}
+              closeAddTodo={() => setAddTodo(false)}
             />
           );
         })}

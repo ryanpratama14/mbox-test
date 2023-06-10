@@ -9,6 +9,7 @@ type Props = {
   selectedTodo: number[];
   markTodo: (index: number) => void;
   deleteTodo: (index: number) => void;
+  closeAddTodo: () => void;
 };
 
 export default function TodoItem({
@@ -18,12 +19,16 @@ export default function TodoItem({
   selectedTodo,
   markTodo,
   deleteTodo,
+  closeAddTodo,
 }: Props): React.JSX.Element {
   return (
     <div className="flex justify-between items-center bg-white px-4 py-2 rounded">
       <aside className="flex gap-4 items-center">
         <button
-          onClick={() => handleSelect(index)}
+          onClick={() => {
+            handleSelect(index);
+            closeAddTodo();
+          }}
           className={`relative animate p-0 text-white
         ${selectedTodo.includes(index) ? "bg-blue-500" : "bg-gray-200"}
         `}
