@@ -5,8 +5,9 @@ import { dateFormat } from "../utils";
 type Props = {
   todo: TodosItems;
   index: number;
-  handleSelect: (index: number) => void;
+  addTodo: boolean;
   selectedTodo: number[];
+  handleSelect: (index: number) => void;
   markTodo: (index: number) => void;
   deleteTodo: (index: number) => void;
   closeAddTodo: () => void;
@@ -15,8 +16,9 @@ type Props = {
 export default function TodoItem({
   todo,
   index,
-  handleSelect,
+  addTodo,
   selectedTodo,
+  handleSelect,
   markTodo,
   deleteTodo,
   closeAddTodo,
@@ -27,7 +29,7 @@ export default function TodoItem({
         <button
           onClick={() => {
             handleSelect(index);
-            closeAddTodo();
+            addTodo ? closeAddTodo() : null;
           }}
           className={`relative animate p-0 text-white
         ${selectedTodo.includes(index) ? "bg-blue-500" : "bg-gray-200"}

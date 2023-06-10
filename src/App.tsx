@@ -158,8 +158,9 @@ export default function App(): React.JSX.Element {
               key={todo.id}
               todo={todo}
               index={index}
-              handleSelect={handleSelect}
+              addTodo={addTodo}
               selectedTodo={selectedTodo}
+              handleSelect={handleSelect}
               markTodo={markTodo}
               deleteTodo={deleteTodo}
               closeAddTodo={() => setAddTodo(false)}
