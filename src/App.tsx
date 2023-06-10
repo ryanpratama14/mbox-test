@@ -131,23 +131,23 @@ export default function App(): React.JSX.Element {
           </select>
         </div>
         {addTodo ? (
-          <form onSubmit={handleSubmit} className="flex gap-4">
+          <form onSubmit={handleSubmit} className="grid grid-cols-3 gap-4">
             <input
               placeholder="Enter task..."
               value={newTodo.title}
               onChange={handleChange}
               name="title"
               type="text"
-              className="w-[70%]"
+              className="col-span-2"
             />
             <input
               value={newTodo.date}
               onChange={handleChange}
               name="date"
               type="date"
-              className="w-[30%]"
+              className="col-span-1"
             />
-            <button type="submit" className="w-full bg-blue-500 text-white">
+            <button type="submit" className="col-span-3 bg-blue-500 text-white">
               Add to Todo List
             </button>
           </form>
